@@ -34,6 +34,8 @@ grep [aA].* $1 | wc
 # count alphanumeric words
 
 # automated committing to git repository
+echo ""
+echo ""
 git add -A .
 git commit -m "automated commit from script"
 git push -u origin master
