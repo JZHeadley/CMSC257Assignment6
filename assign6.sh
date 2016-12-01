@@ -22,17 +22,17 @@ tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort | head  -1
 # starts with "d" and ends with "d" can be upper or lower
 #sed '/d.*d//Ig'
 printf "number of words that start and end with d or D\n"
-grep -w [dD].*[dD] $1 #| wc 
+grep  [dD].*[dD] $1 #| wc 
 
 # starts with "A" or "a" and ends with anything
 printf "\nnumber of words that start with A or a\n"
-grep -w [aA].* $1 #| wc
+grep  [aA].* $1 #| wc
 
 # count numeric words
 
 
 # count alphanumeric words
-
+grep "^[a-zA-Z0-9_]*$" $1  
 # automated committing to git repository
 echo ""
 echo ""
