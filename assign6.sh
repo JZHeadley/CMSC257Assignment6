@@ -30,7 +30,7 @@ grep  [aA].* $1 #| wc
 
 # count numeric words
 printf "\nnumber of numeric words\n"
-grep [0-9]* $1 
+grep '^[0-9][0-9]*$' $1 
 
 # count alphanumeric words
 printf "\nnumber of alphanumeric words\n"
