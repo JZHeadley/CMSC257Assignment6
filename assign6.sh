@@ -19,6 +19,13 @@ echo "least repetitive word"
 tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort | head  -10
 
 # find words based on regex patterns
+# starts with "d" and ends with "d" can be upper or lower
+sed '/d.+d//Ig'
+# starts with "A" or "a" and ends with anything
+
+# count numeric words
+
+# count alphanumeric words
 
 # automated committing to git repository
 git add -A .
