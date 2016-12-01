@@ -25,7 +25,7 @@ echo "number of words that start and end with d or D"
 grep -w [dD].*[dD] $1 #| wc 
 
 # starts with "A" or "a" and ends with anything
-echo "number of words that start with A or a"
+echo "\nnumber of words that start with A or a"
 grep -w [aA].* $1 #| wc
 
 # count numeric words
