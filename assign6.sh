@@ -21,11 +21,11 @@ tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort | head  -1
 # find words based on regex patterns
 # starts with "d" and ends with "d" can be upper or lower
 #sed '/d.*d//Ig'
-printf "number of words that start and end with d or D"
+printf "number of words that start and end with d or D\n"
 grep -w [dD].*[dD] $1 #| wc 
 
 # starts with "A" or "a" and ends with anything
-printf "\nnumber of words that start with A or a"
+printf "\nnumber of words that start with A or a\n"
 grep -w [aA].* $1 #| wc
 
 # count numeric words
