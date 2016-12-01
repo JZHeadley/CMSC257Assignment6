@@ -23,9 +23,13 @@ tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort | head  -10
 #sed '/d.*d//Ig'
 echo "number of words that start and end with d or D"
 grep [dD].*[dD] $1 | wc 
+
 # starts with "A" or "a" and ends with anything
+echo "number of words that start with A or a"
+grep [aA].* $1 | wc
 
 # count numeric words
+
 
 # count alphanumeric words
 
