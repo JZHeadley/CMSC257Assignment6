@@ -32,6 +32,7 @@ grep  [aA].* $1 #| wc
 
 
 # count alphanumeric words
+printf "\nnumber of alphanumeric words\n"
 grep "^[a-zA-Z0-9_]*$" $1  
 # automated committing to git repository
 echo ""
