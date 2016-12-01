@@ -29,7 +29,7 @@ printf "\nnumber of words that start with A or a\n"
 grep  [aA].* $1 #| wc
 
 # count numeric words
-
+grep [0-9]* $1 
 
 # count alphanumeric words
 printf "\nnumber of alphanumeric words\n"
