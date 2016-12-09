@@ -46,7 +46,7 @@ echo ""
 echo ""
 
 while true; do
-    read -p "Would you like to automatically commit to git? (You'll need ot have the included ssh key imported)" yn
+    read -p "Would you like to automatically commit to git? (You'll need to have the included ssh key imported)" yn
     case $yn in
         [Yy]* ) gitCommit; break;;
         [Nn]* ) exit;;
