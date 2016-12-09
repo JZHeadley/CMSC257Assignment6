@@ -2,6 +2,12 @@
 #FILE= $(<$1)
 #echo "$FILE"
 
+function gitCommit {
+    git add -A .
+    git commit -m "automated commit from script"
+    git push -u origin master
+}
+
 # count number of lines
 printf "Number of lines in the file is "
 wc -l $1
@@ -38,6 +44,13 @@ grep "^[a-zA-Z0-9_]*$" $1 | wc -w
 # automated committing to git repository
 echo ""
 echo ""
-git add -A .
-git commit -m "automated commit from script"
-git push -u origin master
+
+while true; do
+    read -p "Would you like to automatically commit to git? (You'll need ot have the included ssh key imported)" yn
+    case $yn in
+        [Yy]* ) gitCommit; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer y or n.";;
+    esac
+done
+
