@@ -44,7 +44,8 @@ grep -Ewo '[0-9][0-9]*' $1 | wc -w
 
 # count alphanumeric words
 printf "\nnumber of alphanumeric words\n"
-grep -Ewo "[a-zA-Z0-9]*" $1 | wc -w
+#grep -Ewo "[a-zA-Z0-9]*" $1 | wc -w
+grep -Eow '[a-zA-Z0-9]*' test.txt | sed 's/^[0-9]*//g' | sed 's/^[a-zA-Z]*//g' | wc -w
 
 # automated committing to git repository
 echo ""
