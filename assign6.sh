@@ -36,7 +36,7 @@ grep  '^[dD].*[dD]$' $1 | wc -w
 
 # starts with "A" or "a" and ends with anything
 printf "\nnumber of words that start with A or a\n"
-grep  '^[aA].*$' $1 | wc -w
+grep -Ewo '[aA].*[^ ]' $1 | wc -w
 
 # count numeric words
 printf "\nnumber of numeric words\n"
