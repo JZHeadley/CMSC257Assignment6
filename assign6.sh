@@ -7,7 +7,11 @@ function gitCommit {
     git commit -m "automated commit from script"
     git push -u origin master
 }
-
+if [ "$#" -eq 0 ]
+then
+    echo "You must pass in a File name"
+    exit 1
+fi
 # count number of lines
 printf "Number of lines in the file is "
 wc -l $1
@@ -28,11 +32,11 @@ tr -c '[:alnum:]' '[\n*]' < $1 | sort | uniq -c | sort | head  -1
 # starts with "d" and ends with "d" can be upper or lower
 #sed '/d.*d//Ig'
 printf "number of words that start and end with d or D\n"
-grep  [dD].*[dD] $1 | wc -w
+grep  '^[dD].*[dD]$' $1 | wc -w
 
 # starts with "A" or "a" and ends with anything
 printf "\nnumber of words that start with A or a\n"
-grep  [aA].* $1 | wc -w
+grep  '^[aA].*$' $1 | wc -w
 
 # count numeric words
 printf "\nnumber of numeric words\n"
@@ -46,7 +50,7 @@ echo ""
 echo ""
 
 while true; do
-    read -p "Would you like to automatically commit to git? (You'll need to have the included ssh key imported)" yn
+    read -p "Would you like to automatically commit to git? (You'll need to have the included ssh key imported) [yY/nN]" yn
     case $yn in
         [Yy]* ) gitCommit; break;;
         [Nn]* ) exit;;
